@@ -1,0 +1,63 @@
+{
+  "name": "skillarium",
+  "version": "0.1.0",
+  "description": "A GitHub-native fitness frontier for AI agent skill repositories.",
+  "type": "module",
+  "bin": {
+    "skillarium": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "schema",
+    "site-template",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test:e2e": "playwright test",
+    "prepack": "npm run typecheck && npm test && npm run build",
+    "verify": "npm run typecheck && npm test && npm run build && npm run test:e2e"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "agent-skills",
+    "ai-agents",
+    "codex",
+    "claude-code",
+    "evals",
+    "github-actions"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZivaXu/skillarium.git"
+  },
+  "homepage": "https://zivaxu.github.io/skillarium/",
+  "bugs": {
+    "url": "https://github.com/ZivaXu/skillarium/issues"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^14.0.2",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
+    "remark-parse": "^11.0.0",
+    "unified": "^11.0.5",
+    "unist-util-visit": "^5.0.0",
+    "yaml": "^2.8.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15"
+  }
+}

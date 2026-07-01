@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zivaxu.github.io/skillarium/schema/manifest.schema.json",
+  "title": "Skillarium Manifest",
+  "type": "object",
+  "required": ["schemaVersion", "generatedAt", "project", "summary", "skills"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "project": {
+      "type": "object",
+      "required": ["title", "root"],
+      "properties": {
+        "title": { "type": "string" },
+        "root": { "type": "string" },
+        "repositoryUrl": { "type": "string", "format": "uri" }
+      },
+      "additionalProperties": false
+    },
+    "summary": {
+      "type": "object",
+      "required": ["skillCount", "averageReadiness", "currentEvidence", "highRiskFlags", "status"],
+      "properties": {
+        "skillCount": { "type": "integer", "minimum": 0 },
+        "averageReadiness": { "type": "integer", "minimum": 0, "maximum": 100 },
+        "currentEvidence": { "type": "integer", "minimum": 0 },
+        "highRiskFlags": { "type": "integer", "minimum": 0 },
+        "status": { "enum": ["healthy", "review-ready", "attention", "blocked"] }
+      },
+      "additionalProperties": false
+    },
+    "skills": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/skill" }
+    }
+  },
+  "$defs": {
+    "skill": {
+      "type": "object",
+      "required": ["id", "name", "description", "channel", "sourcePath", "digest", "ecosystems", "readiness", "evidence", "risks", "health"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "description": { "type": "string" },
+        "channel": { "enum": ["stable", "beta", "candidate", "deprecated"] },
+        "sourcePath": { "type": "string" },
+        "sourceRoot": { "type": "string" },
+        "digest": { "type": "string", "pattern": "^[a-f0-9]{16}$" },
+        "ecosystems": { "type": "array", "items": { "enum": ["agent-skills", "codex", "claude", "unknown"] } },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "readiness": {
+          "type": "object",
+          "required": ["score", "status", "checks"],
+          "properties": {
+            "score": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "status": { "enum": ["ready", "review", "attention", "blocked"] },
+            "checks": { "type": "array", "items": { "$ref": "#/$defs/check" } }
+          }
+        },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "risks": { "type": "array", "items": { "$ref": "#/$defs/risk" } },
+        "health": { "enum": ["healthy", "review-ready", "attention", "blocked"] }
+      }
+    },
+    "check": {
+      "type": "object",
+      "required": ["code", "label", "status", "message", "penalty"],
+      "properties": {
+        "code": { "type": "string" },
+        "label": { "type": "string" },
+        "status": { "enum": ["pass", "warn", "fail"] },
+        "message": { "type": "string" },
+        "penalty": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "evidence": {
+      "type": "object",
+      "required": ["status", "strength", "currentReceipts", "staleReceipts", "cases", "passed", "passRate", "criteriaDigests", "latestRunAt"],
+      "properties": {
+        "status": { "enum": ["none", "stale", "current"] },
+        "strength": { "enum": ["none", "limited", "strong"] },
+        "currentReceipts": { "type": "integer", "minimum": 0 },
+        "staleReceipts": { "type": "integer", "minimum": 0 },
+        "cases": { "type": "integer", "minimum": 0 },
+        "passed": { "type": "integer", "minimum": 0 },
+        "passRate": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "criteriaDigests": { "type": "array", "items": { "type": "string" } },
+        "latestRunAt": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "risk": {
+      "type": "object",
+      "required": ["code", "severity", "message"],
+      "properties": {
+        "code": { "type": "string" },
+        "severity": { "enum": ["info", "warning", "high", "critical"] },
+        "message": { "type": "string" }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,19 @@
+version: 1
+title: __PROJECT_TITLE__ Skill Observatory
+
+include:
+  - skills/**/SKILL.md
+  - .agents/skills/**/SKILL.md
+  - .codex/skills/**/SKILL.md
+  - .claude/skills/**/SKILL.md
+
+exclude:
+  - "**/node_modules/**"
+  - "**/.git/**"
+  - .skillarium/site/**
+
+outputDir: .skillarium/site
+evidenceDir: .skillarium/evidence
+failOn: critical
+
+overrides: {}

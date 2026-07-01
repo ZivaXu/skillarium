@@ -1,0 +1,14 @@
+version: 1
+title: Northstar Agent Skills
+include:
+  - skills/**/SKILL.md
+  - .agents/skills/**/SKILL.md
+  - .codex/skills/**/SKILL.md
+  - .claude/skills/**/SKILL.md
+exclude:
+  - "**/node_modules/**"
+  - .skillarium/site/**
+outputDir: .skillarium/site
+evidenceDir: .skillarium/evidence
+failOn: critical
+overrides: {}

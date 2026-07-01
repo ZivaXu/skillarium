@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>__SKILLARIUM_TITLE__</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div class="brand-lockup" aria-label="Skillarium Fitness Frontier">
+          <span class="brand-mark" aria-hidden="true">S</span>
+          <div>
+            <p class="eyebrow">Skillarium</p>
+            <h1>Fitness Frontier</h1>
+          </div>
+        </div>
+
+        <nav class="mode-switch" aria-label="Release channel">
+          <button class="mode-button is-active" type="button" data-channel="all">All</button>
+          <button class="mode-button" type="button" data-channel="stable">Stable</button>
+          <button class="mode-button" type="button" data-channel="beta">Beta</button>
+          <button class="mode-button" type="button" data-channel="candidate">Candidates</button>
+        </nav>
+
+        <div class="command-strip">
+          <a class="quiet-button" href="./manifest.json">Manifest</a>
+          <button class="primary-button" type="button" data-action="copy-embed">Copy embed</button>
+        </div>
+      </header>
+
+      <main class="workspace">
+        <aside class="left-panel" aria-label="Repository telemetry">
+          <section class="metric-stack" aria-label="Repository health">
+            <div class="metric">
+              <span class="metric-value" id="metric-skills">0</span>
+              <span class="metric-label">skills</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value" id="metric-readiness">0</span>
+              <span class="metric-label">readiness</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value" id="metric-evidence">0/0</span>
+              <span class="metric-label">evidence</span>
+            </div>
+            <div class="metric">
+              <span class="metric-value" id="metric-risk">0</span>
+              <span class="metric-label">high risks</span>
+            </div>
+          </section>
+
+          <section class="control-group" aria-label="Map signals">
+            <label class="switch-row">
+              <input id="toggle-links" type="checkbox" checked />
+              <span>Workflow links</span>
+            </label>
+            <label class="switch-row">
+              <input id="toggle-risk" type="checkbox" checked />
+              <span>Risk flares</span>
+            </label>
+          </section>
+
+          <section class="skill-list-wrap" aria-label="Skills">
+            <div class="section-title">
+              <span>Constellation</span>
+              <span id="visible-count">0 visible</span>
+            </div>
+            <div class="skill-list" id="skill-list"></div>
+          </section>
+        </aside>
+
+        <section class="observatory" aria-label="Interactive skill constellation">
+          <div class="observatory-frame">
+            <svg id="constellation" class="constellation" viewBox="0 0 1000 700" role="img" aria-label="Skill fitness constellation">
+              <defs>
+                <filter id="soft-glow" x="-80%" y="-80%" width="260%" height="260%">
+                  <feGaussianBlur stdDeviation="5" result="blur" />
+                  <feMerge>
+                    <feMergeNode in="blur" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+                <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+                  <path d="M 64 0 L 0 0 0 64" fill="none" stroke="rgba(236,232,215,.075)" stroke-width="1" />
+                </pattern>
+              </defs>
+              <rect class="map-bed" width="1000" height="700" />
+              <rect width="1000" height="700" fill="url(#grid)" />
+              <g id="link-layer"></g>
+              <g id="orbit-layer"></g>
+              <g id="star-layer"></g>
+              <g id="label-layer"></g>
+            </svg>
+            <div class="empty-state" id="empty-state" hidden>No skills found in the configured paths.</div>
+            <div class="map-caption">
+              <span id="caption-primary">Repository frontier</span>
+              <span id="caption-secondary">readiness and evidence are measured separately</span>
+            </div>
+          </div>
+        </section>
+
+        <aside class="right-panel" aria-label="Selected skill">
+          <section class="selected-skill">
+            <div class="selected-heading">
+              <p class="eyebrow" id="selected-channel">Candidate</p>
+              <span class="status-mark" id="selected-health">unverified</span>
+            </div>
+            <h2 id="selected-name">No skill selected</h2>
+            <p class="selected-summary" id="selected-summary"></p>
+
+            <div class="score-grid">
+              <div>
+                <span class="score-label">Readiness</span>
+                <strong id="score-readiness">0</strong>
+              </div>
+              <div>
+                <span class="score-label">Evidence</span>
+                <strong id="score-evidence">none</strong>
+              </div>
+              <div>
+                <span class="score-label">Pass rate</span>
+                <strong id="score-pass-rate">n/a</strong>
+              </div>
+              <div>
+                <span class="score-label">Risk flags</span>
+                <strong id="score-risk">0</strong>
+              </div>
+            </div>
+
+            <dl class="source-ledger">
+              <div><dt>Source</dt><dd id="selected-source">-</dd></div>
+              <div><dt>Digest</dt><dd id="selected-digest">-</dd></div>
+            </dl>
+          </section>
+
+          <section class="ledger-panel" aria-label="Readiness ledger">
+            <div class="section-title">
+              <span>Readiness ledger</span>
+              <span id="check-count">0 checks</span>
+            </div>
+            <ol id="check-list" class="check-list"></ol>
+          </section>
+
+          <section class="risk-panel" aria-label="Risk surface">
+            <div class="section-title">
+              <span>Risk surface</span>
+              <span id="risk-count">0 flags</span>
+            </div>
+            <ul id="risk-list" class="risk-list"></ul>
+          </section>
+        </aside>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script id="skillarium-data" type="application/json">__SKILLARIUM_DATA__</script>
+    <script src="./app.js"></script>
+  </body>
+</html>

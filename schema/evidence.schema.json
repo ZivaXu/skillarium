@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://zivaxu.github.io/skillarium/schema/evidence.schema.json",
+  "title": "Skillarium Evidence Receipt",
+  "type": "object",
+  "required": ["schemaVersion", "skillId", "skillDigest", "criteriaDigest", "runAt", "cases", "passed"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "skillId": { "type": "string" },
+    "skillDigest": { "type": "string", "pattern": "^[a-f0-9]{16}$" },
+    "criteriaDigest": { "type": "string", "minLength": 1 },
+    "runAt": { "type": "string", "format": "date-time" },
+    "cases": { "type": "integer", "minimum": 0 },
+    "passed": { "type": "integer", "minimum": 0 },
+    "source": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "url": { "type": "string", "format": "uri" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

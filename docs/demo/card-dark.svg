@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="220" viewBox="0 0 900 220" role="img" aria-label="Northstar Agent Skills fitness frontier">
+  <rect width="900" height="220" rx="8" fill="#11120f"/>
+  <rect x="1" y="1" width="898" height="218" rx="7" fill="none" stroke="#3b3c35"/>
+  <rect x="24" y="20" width="198" height="180" rx="6" fill="#181914" stroke="#3b3c35"/>
+  <g><line x1="150.7" y1="119.7" x2="55.8" y2="121.1" stroke="#3b3c35" stroke-width="1" opacity="0.6"/><line x1="150.7" y1="119.7" x2="141.7" y2="67.3" stroke="#3b3c35" stroke-width="1" opacity="0.6"/><line x1="55.8" y1="121.1" x2="129.2" y2="158.3" stroke="#3b3c35" stroke-width="1" opacity="0.6"/><line x1="141.7" y1="67.3" x2="39.5" y2="76.9" stroke="#3b3c35" stroke-width="1" opacity="0.6"/><circle cx="150.7" cy="119.7" r="7.1" fill="#edc34f"/><circle cx="150.7" cy="119.7" r="12.1" fill="none" stroke="#edc34f" opacity="0.22"/><circle cx="55.8" cy="121.1" r="6.3" fill="#edc34f"/><circle cx="55.8" cy="121.1" r="11.3" fill="none" stroke="#edc34f" opacity="0.22"/><circle cx="141.7" cy="67.3" r="7.1" fill="#7be0aa"/><circle cx="141.7" cy="67.3" r="12.1" fill="none" stroke="#7be0aa" opacity="0.22"/><circle cx="129.2" cy="158.3" r="7.1" fill="#7be0aa"/><circle cx="129.2" cy="158.3" r="12.1" fill="none" stroke="#7be0aa" opacity="0.22"/><circle cx="39.5" cy="76.9" r="6.3" fill="#edc34f"/><circle cx="39.5" cy="76.9" r="11.3" fill="none" stroke="#edc34f" opacity="0.22"/></g>
+  <text x="250" y="42" fill="#edc34f" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12">SKILLARIUM / FITNESS FRONTIER</text>
+  <text x="250" y="79" fill="#f4f0e6" font-family="Georgia, Times New Roman, serif" font-size="30" font-weight="700">Northstar Agent Skills</text>
+  <text x="250" y="105" fill="#aaa89f" font-family="Avenir Next, Segoe UI, sans-serif" font-size="14">REVIEW READY · generated 2026-06-29</text>
+  <line x1="250" y1="126" x2="872" y2="126" stroke="#3b3c35"/>
+  <text x="250" y="151" fill="#aaa89f" font-family="Avenir Next, Segoe UI, sans-serif" font-size="11">SKILLS</text>
+  <text x="250" y="182" fill="#f4f0e6" font-family="Georgia, Times New Roman, serif" font-size="27">5</text>
+  <text x="372" y="151" fill="#aaa89f" font-family="Avenir Next, Segoe UI, sans-serif" font-size="11">READINESS</text>
+  <text x="372" y="182" fill="#7be0aa" font-family="Georgia, Times New Roman, serif" font-size="27">96</text>
+  <text x="530" y="151" fill="#aaa89f" font-family="Avenir Next, Segoe UI, sans-serif" font-size="11">CURRENT EVIDENCE</text>
+  <text x="530" y="182" fill="#69bff5" font-family="Georgia, Times New Roman, serif" font-size="27">2/5</text>
+  <text x="730" y="151" fill="#aaa89f" font-family="Avenir Next, Segoe UI, sans-serif" font-size="11">HIGH RISKS</text>
+  <text x="730" y="182" fill="#f4f0e6" font-family="Georgia, Times New Roman, serif" font-size="27">0</text>
+</svg>

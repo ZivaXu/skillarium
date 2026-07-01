@@ -1,0 +1,517 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-06-29T18:06:11.328Z",
+  "project": {
+    "title": "Northstar Agent Skills",
+    "root": "."
+  },
+  "summary": {
+    "skillCount": 5,
+    "averageReadiness": 96,
+    "currentEvidence": 2,
+    "highRiskFlags": 0,
+    "status": "review-ready"
+  },
+  "skills": [
+    {
+      "id": "artifact-review",
+      "name": "artifact-review",
+      "description": "Reviews a rendered product artifact against its intended user flow. Use when screenshots, PDFs, or a live prototype need evidence-grounded UX findings.",
+      "channel": "stable",
+      "sourcePath": "skills/artifact-review/SKILL.md",
+      "sourceRoot": "skills",
+      "digest": "eefc90f4683d3f42",
+      "ecosystems": [
+        "agent-skills"
+      ],
+      "tags": [
+        "design",
+        "review"
+      ],
+      "readiness": {
+        "score": 100,
+        "status": "ready",
+        "checks": [
+          {
+            "code": "frontmatter.parse",
+            "label": "Frontmatter",
+            "status": "pass",
+            "message": "YAML frontmatter parsed",
+            "penalty": 0
+          },
+          {
+            "code": "frontmatter.name",
+            "label": "Skill name",
+            "status": "pass",
+            "message": "Name follows the Agent Skills convention",
+            "penalty": 0
+          },
+          {
+            "code": "frontmatter.description",
+            "label": "Description",
+            "status": "pass",
+            "message": "Description is present",
+            "penalty": 0
+          },
+          {
+            "code": "description.trigger",
+            "label": "Activation cue",
+            "status": "pass",
+            "message": "Description states when to use the skill",
+            "penalty": 0
+          },
+          {
+            "code": "name.directory-match",
+            "label": "Directory match",
+            "status": "pass",
+            "message": "Directory and skill name agree",
+            "penalty": 0
+          },
+          {
+            "code": "instructions.body",
+            "label": "Instructions",
+            "status": "pass",
+            "message": "Instruction body is present",
+            "penalty": 0
+          },
+          {
+            "code": "references.local",
+            "label": "Local references",
+            "status": "pass",
+            "message": "0 local references resolved",
+            "penalty": 0
+          },
+          {
+            "code": "portability.absolute-paths",
+            "label": "Portability",
+            "status": "pass",
+            "message": "No machine-specific absolute paths found",
+            "penalty": 0
+          },
+          {
+            "code": "scope.progressive-disclosure",
+            "label": "Context size",
+            "status": "pass",
+            "message": "48 instruction words",
+            "penalty": 0
+          }
+        ]
+      },
+      "evidence": {
+        "status": "none",
+        "strength": "none",
+        "currentReceipts": 0,
+        "staleReceipts": 0,
+        "cases": 0,
+        "passed": 0,
+        "passRate": null,
+        "criteriaDigests": [],
+        "latestRunAt": null
+      },
+      "risks": [],
+      "health": "review-ready"
+    },
+    {
+      "id": "market-scan",
+      "name": "market-scan",
+      "description": "Researches competitors and validates differentiated product wedges with current evidence, collision checking, and willingness-to-pay analysis.",
+      "channel": "candidate",
+      "sourcePath": "skills/market-scan/SKILL.md",
+      "sourceRoot": "skills",
+      "digest": "acbc2af73cce26a2",
+      "ecosystems": [
+        "agent-skills"
+      ],
+      "tags": [
+        "research",
+        "strategy"
+      ],
+      "readiness": {
+        "score": 90,
+        "status": "ready",
+        "checks": [
+          {
+            "code": "frontmatter.parse",
+            "label": "Frontmatter",
+            "status": "pass",
+            "message": "YAML frontmatter parsed",
+            "penalty": 0
+          },
+          {
+            "code": "frontmatter.name",
+            "label": "Skill name",
+            "status": "pass",
+            "message": "Name follows the Agent Skills convention",
+            "penalty": 0
+          },
+          {
+            "code": "frontmatter.description",
+            "label": "Description",
+            "status": "pass",
+            "message": "Description is present",
+            "penalty": 0
+          },
+          {
+            "code": "description.trigger",
+            "label": "Activation cue",
+            "status": "warn",
+            "message": "Add a concise 'Use when' activation cue",
+            "penalty": 10
+          },
+          {
+            "code": "name.directory-match",
+            "label": "Directory match",
+            "status": "pass",
+            "message": "Directory and skill name agree",
+            "penalty": 0
+          },
+          {
+            "code": "instructions.body",
+            "label": "Instructions",
+            "status": "pass",
+            "message": "Instruction body is present",
+            "penalty": 0
+          },
+          {
+            "code": "references.local",
+            "label": "Local references",
+            "status": "pass",
+            "message": "0 local references resolved",
+            "penalty": 0
+          },
+          {
+            "code": "portability.absolute-paths",
+            "label": "Portability",
+            "status": "pass",
+            "message": "No machine-specific absolute paths found",
+            "penalty": 0
+          },
+          {
+            "code": "scope.progressive-disclosure",
+            "label": "Context size",
+            "status": "pass",
+            "message": "49 instruction words",
+            "penalty": 0
+          }
+        ]
+      },
+      "evidence": {
+        "status": "none",
+        "strength": "none",
+        "currentReceipts": 0,
+        "staleReceipts": 0,
+        "cases": 0,
+        "passed": 0,
+        "passRate": null,
+        "criteriaDigests": [],
+        "latestRunAt": null
+      },
+      "risks": [
+        {
+          "code": "network-access",
+          "severity": "warning",
+          "message": "Can call external URLs or network tools"
+        }
+      ],
+      "health": "review-ready"
+    },
+    {
+      "id": "release-notes",
+      "name": "release-notes",
+      "description": "Produces concise release notes from verified repository changes. Use when a release, changelog, or customer update needs to be drafted from git history.",
+      "channel": "stable",
+      "sourcePath": ".claude/skills/release-notes/SKILL.md",
+      "sourceRoot": ".claude",
+      "digest": "5b84ad279164b2f4",
+      "ecosystems": [
+        "claude"
+      ],
+      "tags": [
+        "communication",
+        "release"
+      ],
+      "readiness": {
+        "score": 100,
+        "status": "ready",
+        "checks": [
+          {
+            "code": "frontmatter.parse",
+            "label": "Frontmatter",
+            "status": "pass",
+            "message": "YAML frontmatter parsed",
+            "penalty": 0
+          },
+          {
+            "code": "frontmatter.name",
+            "label": "Skill name",
+            "status": "pass",
+            "message": "Name follows the Agent Skills convention",
+            "penalty": 0
+          },
+          {
+            "code": "frontmatter.description",
+            "label": "Description",
+            "status": "pass",
+            "message": "Description is present",
+            "penalty": 0
+          },
+          {
+            "code": "description.trigger",
+            "label": "Activation cue",
+            "status": "pass",
+            "message": "Description states when to use the skill",
+            "penalty": 0
+          },
+          {
+            "code": "name.directory-match",
+            "label": "Directory match",
+            "status": "pass",
+            "message": "Directory and skill name agree",
+            "penalty": 0
+          },
+          {
+            "code": "instructions.body",
+            "label": "Instructions",
+            "status": "pass",
+            "message": "Instruction body is present",
+            "penalty": 0
+          },
+          {
+            "code": "references.local",
+            "label": "Local references",
+            "status": "pass",
+            "message": "1 local reference resolved",
+            "penalty": 0
+          },
+          {
+            "code": "portability.absolute-paths",
+            "label": "Portability",
+            "status": "pass",
+            "message": "No machine-specific absolute paths found",
+            "penalty": 0
+          },
+          {
+            "code": "scope.progressive-disclosure",
+            "label": "Context size",
+            "status": "pass",
+            "message": "50 instruction words",
+            "penalty": 0
+          }
+        ]
+      },
+      "evidence": {
+        "status": "current",
+        "strength": "strong",
+        "currentReceipts": 1,
+        "staleReceipts": 0,
+        "cases": 10,
+        "passed": 9,
+        "passRate": 0.9,
+        "criteriaDigests": [
+          "release-accuracy-v2"
+        ],
+        "latestRunAt": "2026-06-29T12:05:00.000Z"
+      },
+      "risks": [],
+      "health": "healthy"
+    },
+    {
+      "id": "skill-installer",
+      "name": "skill-installer",
+      "description": "Inspects and installs agent skills from GitHub repositories. Use when a user provides a repository link or asks to install a skill package.",
+      "channel": "stable",
+      "sourcePath": ".agents/skills/skill-installer/SKILL.md",
+      "sourceRoot": ".agents",
+      "digest": "4bc285da0ee4fd2a",
+      "ecosystems": [
+        "agent-skills"
+      ],
+      "tags": [
+        "github",
+        "skill-operations"
+      ],
+      "readiness": {
+        "score": 100,
+        "status": "ready",
+        "checks": [
+          {
+            "code": "frontmatter.parse",
+            "label": "Frontmatter",
+            "status": "pass",
+            "message": "YAML frontmatter parsed",
+            "penalty": 0
+          },
+          {
+            "code": "frontmatter.name",
+            "label": "Skill name",
+            "status": "pass",
+            "message": "Name follows the Agent Skills convention",
+            "penalty": 0
+          },
+          {
+            "code": "frontmatter.description",
+            "label": "Description",
+            "status": "pass",
+            "message": "Description is present",
+            "penalty": 0
+          },
+          {
+            "code": "description.trigger",
+            "label": "Activation cue",
+            "status": "pass",
+            "message": "Description states when to use the skill",
+            "penalty": 0
+          },
+          {
+            "code": "name.directory-match",
+            "label": "Directory match",
+            "status": "pass",
+            "message": "Directory and skill name agree",
+            "penalty": 0
+          },
+          {
+            "code": "instructions.body",
+            "label": "Instructions",
+            "status": "pass",
+            "message": "Instruction body is present",
+            "penalty": 0
+          },
+          {
+            "code": "references.local",
+            "label": "Local references",
+            "status": "pass",
+            "message": "0 local references resolved",
+            "penalty": 0
+          },
+          {
+            "code": "portability.absolute-paths",
+            "label": "Portability",
+            "status": "pass",
+            "message": "No machine-specific absolute paths found",
+            "penalty": 0
+          },
+          {
+            "code": "scope.progressive-disclosure",
+            "label": "Context size",
+            "status": "pass",
+            "message": "77 instruction words",
+            "penalty": 0
+          }
+        ]
+      },
+      "evidence": {
+        "status": "current",
+        "strength": "strong",
+        "currentReceipts": 1,
+        "staleReceipts": 0,
+        "cases": 12,
+        "passed": 12,
+        "passRate": 1,
+        "criteriaDigests": [
+          "install-safety-v1"
+        ],
+        "latestRunAt": "2026-06-29T12:00:00.000Z"
+      },
+      "risks": [],
+      "health": "healthy"
+    },
+    {
+      "id": "support-guide",
+      "name": "support-guide",
+      "description": "Creates direct troubleshooting guidance for teachers and learners facing a known technical failure and needing a short fallback path.",
+      "channel": "beta",
+      "sourcePath": ".codex/skills/support-guide/SKILL.md",
+      "sourceRoot": ".codex",
+      "digest": "e839c377d71e4224",
+      "ecosystems": [
+        "codex"
+      ],
+      "tags": [
+        "communication",
+        "support"
+      ],
+      "readiness": {
+        "score": 90,
+        "status": "ready",
+        "checks": [
+          {
+            "code": "frontmatter.parse",
+            "label": "Frontmatter",
+            "status": "pass",
+            "message": "YAML frontmatter parsed",
+            "penalty": 0
+          },
+          {
+            "code": "frontmatter.name",
+            "label": "Skill name",
+            "status": "pass",
+            "message": "Name follows the Agent Skills convention",
+            "penalty": 0
+          },
+          {
+            "code": "frontmatter.description",
+            "label": "Description",
+            "status": "pass",
+            "message": "Description is present",
+            "penalty": 0
+          },
+          {
+            "code": "description.trigger",
+            "label": "Activation cue",
+            "status": "warn",
+            "message": "Add a concise 'Use when' activation cue",
+            "penalty": 10
+          },
+          {
+            "code": "name.directory-match",
+            "label": "Directory match",
+            "status": "pass",
+            "message": "Directory and skill name agree",
+            "penalty": 0
+          },
+          {
+            "code": "instructions.body",
+            "label": "Instructions",
+            "status": "pass",
+            "message": "Instruction body is present",
+            "penalty": 0
+          },
+          {
+            "code": "references.local",
+            "label": "Local references",
+            "status": "pass",
+            "message": "0 local references resolved",
+            "penalty": 0
+          },
+          {
+            "code": "portability.absolute-paths",
+            "label": "Portability",
+            "status": "pass",
+            "message": "No machine-specific absolute paths found",
+            "penalty": 0
+          },
+          {
+            "code": "scope.progressive-disclosure",
+            "label": "Context size",
+            "status": "pass",
+            "message": "49 instruction words",
+            "penalty": 0
+          }
+        ]
+      },
+      "evidence": {
+        "status": "stale",
+        "strength": "none",
+        "currentReceipts": 0,
+        "staleReceipts": 1,
+        "cases": 0,
+        "passed": 0,
+        "passRate": null,
+        "criteriaDigests": [],
+        "latestRunAt": null
+      },
+      "risks": [],
+      "health": "review-ready"
+    }
+  ]
+}

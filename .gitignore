@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.skillarium/
+playwright-report/
+test-results/
+*.tgz
+.DS_Store
