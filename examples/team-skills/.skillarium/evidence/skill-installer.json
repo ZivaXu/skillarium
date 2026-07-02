@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "skillId": "skill-installer",
+  "skillDigest": "4bc285da0ee4fd2a",
+  "criteriaDigest": "install-safety-v1",
+  "runAt": "2026-06-29T12:00:00.000Z",
+  "cases": 12,
+  "passed": 12,
+  "source": {
+    "name": "fixture benchmark"
+  }
+}

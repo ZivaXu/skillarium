@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "skillId": "release-notes",
+  "skillDigest": "5b84ad279164b2f4",
+  "criteriaDigest": "release-accuracy-v2",
+  "runAt": "2026-06-29T12:05:00.000Z",
+  "cases": 10,
+  "passed": 9,
+  "source": {
+    "name": "fixture benchmark"
+  }
+}

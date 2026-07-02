@@ -1,6 +1,9 @@
 node_modules/
 dist/
 .skillarium/
+!examples/team-skills/.skillarium/
+!examples/team-skills/.skillarium/evidence/
+!examples/team-skills/.skillarium/evidence/*.json
 playwright-report/
 test-results/
 *.tgz

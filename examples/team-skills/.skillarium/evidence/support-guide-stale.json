@@ -1,0 +1,12 @@
+{
+  "schemaVersion": 1,
+  "skillId": "support-guide",
+  "skillDigest": "0000000000000000",
+  "criteriaDigest": "support-clarity-v1",
+  "runAt": "2026-06-20T08:00:00.000Z",
+  "cases": 10,
+  "passed": 10,
+  "source": {
+    "name": "fixture benchmark"
+  }
+}
